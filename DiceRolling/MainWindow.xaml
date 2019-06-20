@@ -5,44 +5,60 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DiceRolling"
         mc:Ignorable="d"
-        Title="MainWindow" Height="496.594" Width="800" WindowStyle="SingleBorderWindow" Background="White">
-    <Grid Background="#FFD6D5D5">
-        <Grid.OpacityMask>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="Black" Offset="0"/>
-                <GradientStop Color="#FFE20D0D" Offset="1"/>
-            </LinearGradientBrush>
-        </Grid.OpacityMask>
-        <Button x:Name="RollButton" Content="Roll!" HorizontalAlignment="Left" Margin="242,389,0,0" VerticalAlignment="Top" Width="317" Height="67" Click="Button_Click" FontSize="36" Background="White"/>
-        <StackPanel x:Name="AttackerPanel" HorizontalAlignment="Left" Height="151" Margin="10,95,0,0" VerticalAlignment="Top" Width="175">
-            <Viewbox Height="40">
-                <RadioButton x:Name="AttackerOneDice" Content="1 Dice" Background="#FFF00303" GroupName="Attacker"/>
-            </Viewbox>
-            <Viewbox Height="40">
-                <RadioButton x:Name="AttackerTwoDice" Content="2 Dice" Background="#FFF00303" GroupName="Attacker"/>
-            </Viewbox>
-            <Viewbox Height="40">
-                <RadioButton x:Name="AttackerThreeDice" Content="3 Dice" Background="#FFF00303" GroupName="Attacker"/>
-            </Viewbox>
-        </StackPanel>
-        <StackPanel HorizontalAlignment="Left" Height="151" Margin="607,95,0,0" VerticalAlignment="Top" Width="175">
-            <Viewbox Height="40">
-                <RadioButton x:Name="DefenderOneDice" Content="1 Dice" Background="#FF0111B0" GroupName="Defenders"/>
-            </Viewbox>
-            <Viewbox Height="40">
-                <RadioButton x:Name="DefenderTwoDice" Content="2 Dice" Background="#FF0111B0" GroupName="Defenders"/>
-            </Viewbox>
-        </StackPanel>
-        <TextBox BorderThickness="5" x:Name="theTitle" HorizontalAlignment="Left" Height="56" Margin="183,10,0,0" TextWrapping="Wrap" Text="Risk Dice Roller" VerticalAlignment="Top" Width="422" FontFamily="Stencil" FontSize="45" TextAlignment="Center" Background="White" OpacityMask="Black" BorderBrush="#FF0039BD"/>
-        <Rectangle Fill="White" HorizontalAlignment="Left" Height="192" Margin="242,95,0,0" Stroke="Black" VerticalAlignment="Top" Width="317"/>
-        <Button x:Name="ClearButton" Content="Clear Results" HorizontalAlignment="Left" Margin="318,327,0,0" VerticalAlignment="Top" Width="158" Height="37" FontSize="20" Background="White"/>
-        <TextBlock x:Name="AttackerResult1" HorizontalAlignment="Left" Margin="259,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="81" FontSize="18" TextAlignment="Center"/>
-        <TextBlock x:Name="DefenderResult1" HorizontalAlignment="Left" Margin="451,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="81" FontSize="18" TextAlignment="Center"/>
-        <TextBlock x:Name="AttackerResult2" HorizontalAlignment="Left" Margin="259,177,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="81" FontSize="18" TextAlignment="Center"/>
-        <TextBlock x:Name="DefenderResult2" HorizontalAlignment="Left" Margin="451,177,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="81" FontSize="18" TextAlignment="Center"/>
-        <TextBlock x:Name="AttackerResult3" HorizontalAlignment="Left" Margin="259,227,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="81" FontSize="18" TextAlignment="Center"/>
-        <TextBlock x:Name="winner1" HorizontalAlignment="Left" Margin="355,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBlock x:Name="winner2" HorizontalAlignment="Left" Margin="355,186,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        Title="MainWindow" Height="676.594" Width="1098" WindowStyle="SingleBorderWindow" Background="White">
+    <TabControl>
 
-    </Grid>
+        <TabItem Header="Roll Dice">
+            <Grid Background="Black" RenderTransformOrigin="0.5,0.5">
+                <Grid.OpacityMask>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FFE20D0D" Offset="1"/>
+                    </LinearGradientBrush>
+                </Grid.OpacityMask>
+                <Button x:Name="RollButton" Content="Roll!" HorizontalAlignment="Left" Margin="286,511,0,0" VerticalAlignment="Top" Width="526" Height="97" Click="Button_Click" FontSize="36" Background="White"/>
+                <StackPanel x:Name="AttackerPanel" HorizontalAlignment="Left" Height="151" Margin="10,95,0,0" VerticalAlignment="Top" Width="175">
+                    <Viewbox Height="40">
+                        <RadioButton x:Name="AttackerOneDice" Content="1 Dice" Background="#FFF00303" GroupName="Attacker" RenderTransformOrigin="0.5,0.5" BorderBrush="White" Foreground="White"/>
+                    </Viewbox>
+                    <Viewbox Height="40">
+                        <RadioButton x:Name="AttackerTwoDice" Content="2 Dice" Background="#FFF00303" GroupName="Attacker" RenderTransformOrigin="0.5,0.5" BorderBrush="White" Foreground="White"/>
+                    </Viewbox>
+                    <Viewbox Height="40">
+                        <RadioButton x:Name="AttackerThreeDice" Content="3 Dice" GroupName="Attacker" RenderTransformOrigin="0.5,0.5" Background="#FFF00303" Foreground="White" BorderBrush="White"/>
+                    </Viewbox>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Left" Height="151" Margin="884,98,0,0" VerticalAlignment="Top" Width="176">
+                    <Viewbox Height="40">
+                        <RadioButton x:Name="DefenderOneDice" Content="1 Dice" Background="#FF0111B0" GroupName="Defenders" RenderTransformOrigin="0.5,0.5" BorderBrush="White" Foreground="White"/>
+                    </Viewbox>
+                    <Viewbox Height="40">
+                        <RadioButton x:Name="DefenderTwoDice" Content="2 Dice" Background="#FF0111B0" GroupName="Defenders" RenderTransformOrigin="0.5,0.5" BorderBrush="White" Foreground="White"/>
+                    </Viewbox>
+                </StackPanel>
+                <TextBox BorderThickness="5" x:Name="theTitle" HorizontalAlignment="Left" Height="56" Margin="326,10,0,0" TextWrapping="Wrap" Text="Risk Dice Roller" VerticalAlignment="Top" Width="422" FontFamily="Stencil" FontSize="45" TextAlignment="Center" Background="LightGray" OpacityMask="Black" BorderBrush="#FF0039BD"/>
+                <Rectangle Fill="#FFBFBEBE" HorizontalAlignment="Left" Height="268" Margin="259,95,0,0" Stroke="Black" VerticalAlignment="Top" Width="553"/>
+                <Button x:Name="ClearButton" Content="Clear Results" HorizontalAlignment="Left" Margin="404,430,0,0" VerticalAlignment="Top" Width="292" Height="50" FontSize="22" Background="White"/>
+                <TextBlock x:Name="AttackerResult1" HorizontalAlignment="Left" Margin="268,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="123" FontSize="22" TextAlignment="Center"/>
+                <TextBlock x:Name="DefenderResult1" HorizontalAlignment="Left" Margin="668,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="119" FontSize="22" TextAlignment="Center"/>
+                <TextBlock x:Name="AttackerResult2" HorizontalAlignment="Left" Margin="268,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="123" FontSize="22" TextAlignment="Center"/>
+                <TextBlock x:Name="DefenderResult2" HorizontalAlignment="Left" Margin="668,177,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="119" FontSize="22" TextAlignment="Center"/>
+                <TextBlock x:Name="AttackerResult3" HorizontalAlignment="Left" Margin="268,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="123" FontSize="22" TextAlignment="Center"/>
+                <TextBlock x:Name="winner1" HorizontalAlignment="Left" Margin="491,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16"/>
+                <TextBlock x:Name="winner2" HorizontalAlignment="Left" Margin="491,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16"/>
+            </Grid>
+
+        </TabItem>
+
+        <TabItem Header="Timer">
+
+
+
+        </TabItem>
+
+
+    </TabControl>
+
+
+
 </Window>
